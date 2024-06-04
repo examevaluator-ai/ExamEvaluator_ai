@@ -1,0 +1,77 @@
+Vamos começar a programar o domínio
+Nome do domínio: ExamEvaluator.ai
+Descrição do domínio:
+Prompt Detalhado para Pedir Auxílio de IAs
+Eu estou desenvolvendo um projeto de site que avalia vídeos de OSCE (Objective Structured Clinical Examination). A ideia é que os usuários façam upload de vídeos, e o sistema utilize TensorFlow para transcrição de voz e LLaMA3 para análise de texto, a fim de pontuar o desempenho com base em um checklist.
+
+Aqui está o detalhamento do projeto e o que preciso de auxílio:
+
+1. Frontend (React)
+Objetivo: Construir uma interface de usuário interativa onde os usuários possam enviar vídeos e visualizar os resultados.
+Tecnologias: React, Axios.
+Tarefas:
+Criar um formulário de upload de vídeo.
+Enviar o vídeo para o backend usando Axios.
+Exibir o resultado da pontuação recebido do backend.
+2. Backend (Go)
+Objetivo: Gerenciar uploads de vídeos, extrair áudio, e chamar scripts Python para processamento.
+Tecnologias: Go, Gorilla Mux, exec (para chamar scripts Python).
+Tarefas:
+Configurar o servidor Go para receber uploads de vídeo.
+Usar FFmpeg para extrair áudio do vídeo.
+Chamar scripts Python para transcrição de áudio e análise de texto.
+Retornar a pontuação para o frontend.
+3. Machine Learning (Python)
+Objetivo: Processar o áudio para transcrição e analisar o texto transcrito para pontuação.
+Tecnologias: Python, TensorFlow, SpeechRecognition, Transformers (para LLaMA3).
+Tarefas:
+Usar TensorFlow para transcrição de voz.
+Usar LLaMA3 para análise de texto.
+Implementar um script Python que receba o caminho do vídeo, extraia o áudio, transcreva o áudio, analise o texto, e calcule a pontuação.
+Retornar os resultados para o backend Go.
+4. Hospedagem na AWS
+Objetivo: Hospedar a aplicação de maneira escalável e segura.
+Tecnologias: Amazon S3, CloudFront, EC2, IAM, VPC, SSL/TLS.
+Tarefas:
+Hospedar o frontend (React) no Amazon S3 e distribuir via CloudFront.
+Configurar uma instância EC2 para rodar o backend (Go) e os scripts Python.
+Usar Amazon S3 para armazenar vídeos carregados pelos usuários.
+Configurar IAM roles e policies para gerenciar permissões.
+Configurar VPC e grupos de segurança para isolar e proteger a infraestrutura.
+Implementar certificados SSL/TLS usando AWS Certificate Manager para comunicação segura.
+5. Integração e Automação
+Objetivo: Automatizar o processo de deploy e garantir monitoramento e escalabilidade.
+Tecnologias: AWS CodeDeploy, Jenkins, GitHub Actions, Amazon CloudWatch, Auto Scaling.
+Tarefas:
+Configurar pipelines de CI/CD para automatizar deploys.
+Monitorar logs e métricas usando CloudWatch.
+Configurar Auto Scaling para lidar com variações de carga.
+Exemplos de Perguntas
+Frontend:
+
+Como criar um formulário de upload de vídeo em React que envie o arquivo para o backend?
+Como integrar Axios para enviar dados de um formulário para um endpoint Go?
+Backend:
+
+Como configurar um servidor Go para receber uploads de arquivos?
+Como usar exec em Go para chamar scripts Python?
+Exemplos de configuração do FFmpeg para extrair áudio de um vídeo.
+Machine Learning:
+
+Como usar TensorFlow para transcrição de voz em Python?
+Exemplos de uso da biblioteca Transformers para análise de texto com LLaMA3.
+Hospedagem na AWS:
+
+Como configurar um bucket S3 para hospedar arquivos estáticos e integrar com CloudFront?
+Passos para configurar uma instância EC2 para rodar serviços Go e scripts Python.
+Melhores práticas para configurar IAM roles e policies para acessar recursos do S3.
+Integração e Automação:
+
+Como configurar pipelines de CI/CD usando AWS CodeDeploy e GitHub Actions?
+Como monitorar e configurar alertas no Amazon CloudWatch?
+Objetivo Final
+O objetivo é criar um sistema robusto e eficiente onde usuários possam enviar vídeos de OSCE, e o sistema utilize machine learning para transcrever, analisar e pontuar o desempenho, hospedando toda a aplicação na AWS.
+
+Não precisa passar todas as instruções de uma vez, eu sou bem leigo... passe somente uma coisa que eu tenha que fazer e espere eu rodar o código e te falar para dar seguimento ok? Pois ffrequentemen te você envia um monte de códigos e na hora de eu executar o primeiro código já tenho um bug e peço correção desse bg, oque faz tudo ficar confuso e difícil ....
+então vamosd lá, passo zero, oque eu tenho que fazer? Uso Windows, vscode... 
+E pode me perguntar algumas coisas se achar necessário antes de ir digitando toda a lógica....

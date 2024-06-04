@@ -1,0 +1,14 @@
+cd backend
+go run main.go
+
+
+cd frontend
+npm start
+
+
+Ativar o ambiente virtual
+cd C:\Users\diego\Desktop\ExamEvaluator.ai\ml
+.\venv\Scripts\activate
+
+# Adicionar todos os arquivos, exceto os dentro de ml/venv e frontend/node_modules
+git add . ':!ml/venv/' ':!frontend/node_modules/'

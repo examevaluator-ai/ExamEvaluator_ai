@@ -1,0 +1,228 @@
+1
+00:00:00,000 --> 00:00:05,000
+ Olá, meu nome é Danilo, sou programador Backend e hoje vamos falar um pouco sobre Golang.
+
+2
+00:00:05,000 --> 00:00:09,000
+ Antes de mais nada, se inscreva no nosso canal para receber nosso conteúdo semanal.
+
+3
+00:00:16,000 --> 00:00:17,000
+ Você sabe o que é Backend?
+
+4
+00:00:18,000 --> 00:00:21,000
+ Backend é a parte de trás do código, a parte que conhece sobre você,
+
+5
+00:00:22,000 --> 00:00:26,000
+ a parte que salva uma curtida, uma preferência ou te envia uma notificação.
+
+6
+00:00:26,000 --> 00:00:29,000
+ Além disso, essas informações são processadas no Backend.
+
+7
+00:00:29,000 --> 00:00:33,000
+ E devolvida para um site ou aplicativo mostrar as informações na tela.
+
+8
+00:00:33,000 --> 00:00:37,000
+ Essa ponte é feita por meio de APIs, Application Program Interface,
+
+9
+00:00:37,000 --> 00:00:40,000
+ que faz a interface entre o aplicativo e o Backend.
+
+10
+00:00:41,000 --> 00:00:44,000
+ Geralmente, o Backend se comunica com a sua aplicação por protocolos HTTP,
+
+11
+00:00:45,000 --> 00:00:49,000
+ onde seu aplicativo faz uma pergunta e recebe uma resposta do Backend.
+
+12
+00:00:49,000 --> 00:00:54,000
+ Como, por exemplo, o Instagram pergunta para o Backend qual feed devo mostrar para o usuário.
+
+13
+00:00:54,000 --> 00:00:55,000
+ O que define um Backend?
+
+14
+00:00:55,000 --> 00:00:59,000
+ À medida que seu site cresce, mais informações precisam ser criadas
+
+15
+00:00:59,000 --> 00:00:59,000
+ para o usuário.
+
+16
+00:00:59,000 --> 00:01:04,000
+ E, por isso, o Backend precisa ser rápido, para aguentar altas demandas,
+
+17
+00:01:05,000 --> 00:01:09,000
+ escalável, para poder crescer de uma forma eficiente,
+
+18
+00:01:09,000 --> 00:01:13,000
+ e modular, porque você pode trocar peças sem quebrar outras.
+
+19
+00:01:13,000 --> 00:01:16,000
+ Além de não criar uma granularidade muito grande,
+
+20
+00:01:17,000 --> 00:01:19,000
+ para não ser difícil você dar uma manutenção para o seu código.
+
+21
+00:01:20,000 --> 00:01:24,000
+ Quando trabalhamos com software, devemos nos preocupar com memória RAM, CPU e armazenamento.
+
+22
+00:01:25,000 --> 00:01:28,000
+ Porém, um código de Backend otimizado pode economizar custos
+
+23
+00:01:28,000 --> 00:01:29,000
+ e aumentar a sua qualidade de trabalho.
+
+24
+00:01:29,000 --> 00:01:31,000
+ Por isso, o Backend precisa ser rápido, para aguentar altas demandas,
+
+25
+00:01:31,000 --> 00:01:33,000
+ e permitir que seus usuários façam seus negócios.
+
+26
+00:01:33,000 --> 00:01:35,000
+ E se você for um usuário que quer um software mais rápido,
+
+27
+00:01:35,000 --> 00:01:37,000
+ você deve ter uma aplicação de software mais rápida.
+
+28
+00:01:37,000 --> 00:01:39,000
+ O Backend é um software que, como o Google diz,
+
+29
+00:01:39,000 --> 00:01:41,000
+ é um software que é muito bom para você,
+
+30
+00:01:41,000 --> 00:01:45,000
+ porque ele pode aumentar a velocidade de resposta entre o Backend e sua aplicação.
+
+31
+00:01:45,000 --> 00:01:46,000
+ E por que Golang?
+
+32
+00:01:46,000 --> 00:01:50,000
+ Golang, mais conhecido como Go, é uma linguagem open source criada pelo Google.
+
+33
+00:01:50,000 --> 00:01:53,000
+ Ela é muito simples de entender e muito poderosa.
+
+34
+00:01:53,000 --> 00:01:56,000
+ Tanto um programador iniciante quanto um programador avançado,
+
+35
+00:01:56,000 --> 00:01:58,000
+ consegue pegar seus conceitos muito rápido.
+
+36
+00:01:58,000 --> 00:02:02,000
+ Ou seja, o código é convertido para um formato que seu processador entenda.
+
+37
+00:02:02,000 --> 00:02:05,000
+ E não precisa de outras dependências, como o Java, por exemplo,
+
+38
+00:02:05,000 --> 00:02:07,000
+ que precisa da JVM para ser executado.
+
+39
+00:02:07,000 --> 00:02:12,000
+ Além de ser Closed Platform, a gente pode compilar ele tanto para Windows, Mac ou Linux.
+
+40
+00:02:12,000 --> 00:02:15,000
+ Ele foi projetado para encorajar boas práticas de código,
+
+41
+00:02:15,000 --> 00:02:20,000
+ pelo seu ecossistema de pacotes, dando assim mais modularização à sua aplicação.
+
+42
+00:02:20,000 --> 00:02:23,000
+ Pacotes são pastas dentro do diretório de trabalho.
+
+43
+00:02:23,000 --> 00:02:26,000
+ Dentro delas, podem encontrar arquivos Go ou outros pacotes.
+
+44
+00:02:26,000 --> 00:02:28,000
+ Se você precisa de mais confiança na sua aplicação,
+
+45
+00:02:28,000 --> 00:02:31,000
+ Go tem um curioso padrão de tratamento de erros,
+
+46
+00:02:31,000 --> 00:02:34,000
+ onde todos os erros precisam ser tratados pelo usuário,
+
+47
+00:02:34,000 --> 00:02:37,000
+ assim evitando erros genéricos da sua aplicação.
+
+48
+00:02:37,000 --> 00:02:40,000
+ Diferente de outras linguagens, como C e C++,
+
+49
+00:02:40,000 --> 00:02:44,000
+ Go possui seu próprio gerenciamento de memória, com garbage collector.
+
+50
+00:02:44,000 --> 00:02:47,000
+ Assim, é muito mais fácil programar e desenvolver em Go
+
+51
+00:02:47,000 --> 00:02:50,000
+ sem você ter que ir alocar e desalocar variáveis na mão.
+
+52
+00:02:50,000 --> 00:02:52,000
+ Go também possui uma ótima utilização de código,
+
+53
+00:02:52,000 --> 00:02:56,000
+ pois caso alguma variável não seja utilizada ou alguma importação de biblioteca,
+
+54
+00:02:56,000 --> 00:02:58,000
+ seu código não copilará, até você remover a variável.
+
+55
+00:02:58,000 --> 00:03:00,000
+ Bom, se você gostou do conteúdo,
+
+56
+00:03:00,000 --> 00:03:02,000
+ inscreva-se aqui no canal e nas nossas redes sociais.
+
+57
+00:03:02,000 --> 00:03:04,000
+ Até logo!
+
