@@ -1,6 +1,7 @@
 import sys
 import os
 import whisper
+import json
 
 def transcribe_audio(audio_path):
     model = whisper.load_model("large")
@@ -43,10 +44,18 @@ def process_audio(audio_path):
     output_dir = os.path.dirname(audio_path)
     save_transcript(transcript, output_dir, base_filename)
 
+    # Save transcript as JSON
+    json_transcript_path = os.path.join(output_dir, f"{base_filename}.json")
+    with open(json_transcript_path, 'w', encoding='utf-8') as f:
+        json.dump(transcript, f)
+
+    return transcript
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python main.py <audio_path>")
         sys.exit(1)
     
     audio_path = sys.argv[1]
-    process_audio(audio_path)
+    transcript = process_audio(audio_path)
+    print(json.dumps(transcript, ensure_ascii=False, indent=4))

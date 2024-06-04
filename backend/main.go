@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
@@ -16,13 +17,14 @@ import (
 var (
 	processingStatus string
 	mu               sync.Mutex
-	transcript       string
+	transcript       map[string]interface{}
 )
 
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/upload", UploadHandler).Methods("POST")
 	r.HandleFunc("/status", StatusHandler).Methods("GET")
+	r.HandleFunc("/result", ResultHandler).Methods("GET")
 
 	// Configurar CORS
 	corsObj := handlers.AllowedOrigins([]string{"http://localhost:3000"})
@@ -40,6 +42,18 @@ func StatusHandler(w http.ResponseWriter, r *http.Request) {
 	status := processingStatus
 	mu.Unlock()
 	w.Write([]byte(status))
+}
+
+func ResultHandler(w http.ResponseWriter, r *http.Request) {
+	mu.Lock()
+	result, err := json.Marshal(transcript)
+	mu.Unlock()
+	if err != nil {
+		http.Error(w, "Error fetching the transcript", http.StatusInternalServerError)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(result)
 }
 
 func UploadHandler(w http.ResponseWriter, r *http.Request) {
@@ -116,11 +130,8 @@ func runPythonScript(audioPath string) {
 	processingStatus = "transcribing audio"
 	mu.Unlock()
 
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	fmt.Printf("Running command: %s\n", cmd.String())
-
-	if err := cmd.Run(); err != nil {
+	stdout, err := cmd.Output()
+	if err != nil {
 		mu.Lock()
 		processingStatus = "error"
 		mu.Unlock()
@@ -130,5 +141,6 @@ func runPythonScript(audioPath string) {
 
 	mu.Lock()
 	processingStatus = "done"
+	json.Unmarshal(stdout, &transcript)
 	mu.Unlock()
 }

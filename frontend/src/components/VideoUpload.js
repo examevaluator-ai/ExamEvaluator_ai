@@ -9,6 +9,7 @@ const VideoUpload = () => {
     const [finalElapsedTime, setFinalElapsedTime] = useState(null); // new state variable
     const [intervalId, setIntervalId] = useState(null);
     const [dots, setDots] = useState('');
+    const [transcript, setTranscript] = useState(null);
 
     useEffect(() => {
         let dotsInterval;
@@ -91,6 +92,10 @@ const VideoUpload = () => {
             const finalTime = Math.round((Date.now() - startTime) / 1000);
             setFinalElapsedTime(finalTime); // store final elapsed time
             setProcessingStatus(`Transcription complete (${formatTime(finalTime)})`);
+
+            // Fetch the transcript
+            const result = await axios.get('http://localhost:8080/result');
+            setTranscript(result.data);
         } catch (error) {
             setUploadStatus(`Upload failed: ${error.message}`);
         }
@@ -113,6 +118,12 @@ const VideoUpload = () => {
             <p>{processingStatus}{dots}</p>
             {processingStatus && finalElapsedTime === null && <p>Elapsed time: {formatTime(elapsedTime)}</p>}
             {finalElapsedTime !== null && <p>Elapsed time: {formatTime(finalElapsedTime)}</p>}
+            {transcript && (
+                <div>
+                    <h3>Transcript:</h3>
+                    <pre>{JSON.stringify(transcript, null, 2)}</pre>
+                </div>
+            )}
         </div>
     );
 };

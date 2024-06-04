@@ -11,4 +11,11 @@ cd C:\Users\diego\Desktop\ExamEvaluator.ai\ml
 .\venv\Scripts\activate
 
 # Adicionar todos os arquivos, exceto os dentro de ml/venv e frontend/node_modules
-git add . ':!ml/venv/' ':!frontend/node_modules/'
+git add . ':!node_modules' ':!ml/venv/' ':!frontend/node_modules/'
+
+
+git status
+git reset --hard HEAD
+git fetch origin
+git reset --hard origin/master
+

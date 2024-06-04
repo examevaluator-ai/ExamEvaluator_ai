@@ -91,56 +91,56 @@
  e aumentar a sua qualidade de trabalho.
 
 24
-00:01:29,000 --> 00:01:31,000
- Por isso, o Backend precisa ser rápido, para aguentar altas demandas,
+00:01:29,000 --> 00:01:30,000
+ Por isso, o Backend é um dos melhores programadores de software.
 
 25
-00:01:31,000 --> 00:01:33,000
- e permitir que seus usuários façam seus negócios.
+00:01:30,000 --> 00:01:30,000
+ O Backend é um dos melhores programadores de software,
 
 26
-00:01:33,000 --> 00:01:35,000
- E se você for um usuário que quer um software mais rápido,
-
-27
-00:01:35,000 --> 00:01:37,000
- você deve ter uma aplicação de software mais rápida.
-
-28
-00:01:37,000 --> 00:01:39,000
- O Backend é um software que, como o Google diz,
-
-29
-00:01:39,000 --> 00:01:41,000
- é um software que é muito bom para você,
-
-30
-00:01:41,000 --> 00:01:45,000
+00:01:30,000 --> 00:01:31,000
  porque ele pode aumentar a velocidade de resposta entre o Backend e sua aplicação.
 
-31
-00:01:45,000 --> 00:01:46,000
+27
+00:01:32,000 --> 00:01:33,000
  E por que Golang?
+
+28
+00:01:33,000 --> 00:01:37,000
+ Golang, mais conhecido como Go, é uma linguagem open source, criada pelo Google.
+
+29
+00:01:37,000 --> 00:01:40,000
+ Ela é muito simples de entender e muito poderosa.
+
+30
+00:01:40,000 --> 00:01:43,000
+ Tanto um programador iniciante, quanto um programador avançado,
+
+31
+00:01:43,000 --> 00:01:45,000
+ conseguem pegar seus conceitos muito rápido.
 
 32
 00:01:46,000 --> 00:01:50,000
- Golang, mais conhecido como Go, é uma linguagem open source criada pelo Google.
+ Go tem sólidos fundamentos de C e Java, porém sua sintaxe é um pouco diferente,
 
 33
-00:01:50,000 --> 00:01:53,000
- Ela é muito simples de entender e muito poderosa.
+00:01:51,000 --> 00:01:55,000
+ podendo ser mais fácil de escalonar, reutilizar código e trocar padrões.
 
 34
-00:01:53,000 --> 00:01:56,000
- Tanto um programador iniciante quanto um programador avançado,
+00:01:55,000 --> 00:01:58,000
+ Golang é rápido porque é uma linguagem compilada,
 
 35
-00:01:56,000 --> 00:01:58,000
- consegue pegar seus conceitos muito rápido.
+00:01:58,000 --> 00:01:58,000
+ ou seja,
 
 36
-00:01:58,000 --> 00:02:02,000
- Ou seja, o código é convertido para um formato que seu processador entenda.
+00:01:59,000 --> 00:02:02,000
+ o código é convertido para um formato que seu processador entenda.
 
 37
 00:02:02,000 --> 00:02:05,000
@@ -159,7 +159,7 @@
  Ele foi projetado para encorajar boas práticas de código,
 
 41
-00:02:15,000 --> 00:02:20,000
+00:02:15,000 --> 00:02:19,000
  pelo seu ecossistema de pacotes, dando assim mais modularização à sua aplicação.
 
 42
@@ -168,14 +168,14 @@
 
 43
 00:02:23,000 --> 00:02:26,000
- Dentro delas, podem encontrar arquivos Go ou outros pacotes.
+ Dentro delas, podem conter arquivos Go ou outros pacotes.
 
 44
 00:02:26,000 --> 00:02:28,000
  Se você precisa de mais confiança na sua aplicação,
 
 45
-00:02:28,000 --> 00:02:31,000
+00:02:29,000 --> 00:02:31,000
  Go tem um curioso padrão de tratamento de erros,
 
 46
@@ -212,17 +212,17 @@
 
 54
 00:02:56,000 --> 00:02:58,000
- seu código não copilará, até você remover a variável.
+ seu código não copilará, até você remover a variável ou importar.
 
 55
-00:02:58,000 --> 00:03:00,000
+00:02:59,000 --> 00:03:01,000
  Bom, se você gostou do conteúdo,
 
 56
-00:03:00,000 --> 00:03:02,000
+00:03:01,000 --> 00:03:03,000
  inscreva-se aqui no canal e nas nossas redes sociais.
 
 57
-00:03:02,000 --> 00:03:04,000
+00:03:03,000 --> 00:03:05,000
  Até logo!
 
