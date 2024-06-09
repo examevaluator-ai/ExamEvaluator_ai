@@ -136,11 +136,34 @@ func runPythonScript(audioPath string) {
 		processingStatus = "error"
 		mu.Unlock()
 		fmt.Printf("Processing error: %v\n", err)
+		fmt.Printf("Stdout: %s\n", string(stdout))
+		return
+	}
+
+	// Lendo a transcrição do arquivo JSON
+	jsonPath := filepath.Join(filepath.Dir(audioPath), filepath.Base(audioPath)[:len(filepath.Base(audioPath))-len(filepath.Ext(audioPath))]+".json")
+	transcriptFile, err := os.Open(jsonPath)
+	if err != nil {
+		mu.Lock()
+		processingStatus = "error"
+		mu.Unlock()
+		fmt.Printf("Error opening JSON transcript file: %v\n", err)
+		return
+	}
+	defer transcriptFile.Close()
+
+	decoder := json.NewDecoder(transcriptFile)
+	err = decoder.Decode(&transcript)
+	if err != nil {
+		mu.Lock()
+		processingStatus = "error"
+		mu.Unlock()
+		fmt.Printf("Error decoding JSON transcript: %v\n", err)
 		return
 	}
 
 	mu.Lock()
 	processingStatus = "done"
-	json.Unmarshal(stdout, &transcript)
+	fmt.Printf("Transcript result: %v\n", transcript)
 	mu.Unlock()
 }

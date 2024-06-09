@@ -6,7 +6,7 @@ const VideoUpload = () => {
     const [uploadStatus, setUploadStatus] = useState('');
     const [processingStatus, setProcessingStatus] = useState('');
     const [elapsedTime, setElapsedTime] = useState(0);
-    const [finalElapsedTime, setFinalElapsedTime] = useState(null); // new state variable
+    const [finalElapsedTime, setFinalElapsedTime] = useState(null);
     const [intervalId, setIntervalId] = useState(null);
     const [dots, setDots] = useState('');
     const [transcript, setTranscript] = useState(null);
@@ -34,8 +34,9 @@ const VideoUpload = () => {
         setUploadStatus('');
         setProcessingStatus('');
         setElapsedTime(0);
-        setFinalElapsedTime(null); // reset final elapsed time
+        setFinalElapsedTime(null);
         setDots('');
+        setTranscript(null);
         if (intervalId) {
             clearInterval(intervalId);
             setIntervalId(null);
@@ -84,13 +85,13 @@ const VideoUpload = () => {
             let status = await checkStatus();
             while (status !== 'done') {
                 setProcessingStatus(`Current status: ${status}`);
-                await new Promise(resolve => setTimeout(resolve, 2000)); // wait for 2 seconds before checking again
+                await new Promise(resolve => setTimeout(resolve, 2000));
                 status = await checkStatus();
             }
 
             clearInterval(id);
             const finalTime = Math.round((Date.now() - startTime) / 1000);
-            setFinalElapsedTime(finalTime); // store final elapsed time
+            setFinalElapsedTime(finalTime);
             setProcessingStatus(`Transcription complete (${formatTime(finalTime)})`);
 
             // Fetch the transcript
@@ -103,8 +104,18 @@ const VideoUpload = () => {
 
     const formatTime = (seconds) => {
         const mins = Math.floor(seconds / 60);
-        const secs = seconds % 60;
+        const secs = (seconds % 60).toFixed(0); // Keep only two decimal places
         return `${mins}m ${secs}s`;
+    };
+    
+    const formatTranscript = (transcript) => {
+        return transcript.segments.map((segment, index) => (
+            <div key={index}>
+                <p><strong>Segment {index + 1}:</strong> {segment.text}</p>
+                <p><em>Start:</em> {formatTime(segment.start)}, <em>End:</em> {formatTime(segment.end)}</p>
+                <hr />
+            </div>
+        ));
     };
 
     return (
@@ -121,7 +132,7 @@ const VideoUpload = () => {
             {transcript && (
                 <div>
                     <h3>Transcript:</h3>
-                    <pre>{JSON.stringify(transcript, null, 2)}</pre>
+                    {formatTranscript(transcript)}
                 </div>
             )}
         </div>

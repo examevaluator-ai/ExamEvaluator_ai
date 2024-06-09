@@ -25,12 +25,18 @@ def save_transcript(transcript, output_dir, base_filename):
             f.write(f"{format_time(start)} --> {format_time(end)}\n")
             f.write(f"{text}\n\n")
 
+    # Save transcript as JSON
+    json_transcript_path = os.path.join(output_dir, f"{base_filename}.json")
+    with open(json_transcript_path, 'w', encoding='utf-8') as f:
+        json.dump(transcript, f, ensure_ascii=False, indent=4)
+
 def format_time(seconds):
     hours = int(seconds // 3600)
     minutes = int((seconds % 3600) // 60)
-    seconds = int(seconds % 60)
+    seconds = seconds % 60
     milliseconds = int((seconds % 1) * 1000)
-    return f"{hours:02}:{minutes:02}:{seconds:02},{milliseconds:03}"
+    return f"{hours:02}:{minutes:02}:{int(seconds):02},{milliseconds:03}"
+
 
 def process_audio(audio_path):
     print(f"Processing audio file: {audio_path}")
@@ -43,11 +49,6 @@ def process_audio(audio_path):
     base_filename = os.path.splitext(os.path.basename(audio_path))[0]
     output_dir = os.path.dirname(audio_path)
     save_transcript(transcript, output_dir, base_filename)
-
-    # Save transcript as JSON
-    json_transcript_path = os.path.join(output_dir, f"{base_filename}.json")
-    with open(json_transcript_path, 'w', encoding='utf-8') as f:
-        json.dump(transcript, f)
 
     return transcript
 
